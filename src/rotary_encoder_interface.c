@@ -98,8 +98,8 @@ void startEncoders(rcl_node_t *node_handle, rclc_support_t *support,
         executor,
         &publisher_timer));
 
-    fl_encoder = setupEncoder(34, 35, 1);
+    fl_encoder = setupEncoder(35, 34, 1);
     br_encoder = setupEncoder(39, 36, 2);
     fr_encoder = setupEncoder(23 ,22, 3);
-    bl_encoder = setupEncoder(15, 2, 4);
+    bl_encoder = setupEncoder(2, 15, 4);
 }
