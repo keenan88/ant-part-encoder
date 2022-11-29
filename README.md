@@ -6,6 +6,6 @@ _Dependencies:_
 
 
 _Integration into existing project:_
-1. Add this repo to your main source code folder and update it's CMake folder to target the include and src files in this repo.
+1. Add this repo to your main source code folder and update your CMake file to target the include folder and src file in this repo.
 2. Your Cmake file will have include the path to the ESP IDF rotary encoder component in the EXTRA_COMPONENT_DIRS variable, with a line like: set(EXTRA_COMPONENT_DIRS "<$IDF_PATH>/examples/peripherals/pcnt/rotary_encoder/components/rotary_encoder")
-3. Your will have to add Micro ros for ESP IDF to the components folder in your repo and add it to your Cmake file.
+3. Your will have to add Micro ros for ESP IDF to the components folder in your repo, and add it to your Cmake file.
