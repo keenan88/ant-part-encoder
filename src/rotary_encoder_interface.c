@@ -66,10 +66,10 @@ static void init_motor_pub_msg()
 static void publisher_timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 {
 
-   outgoing_wheel_positions.data.data[0] = getEncoderValue(fr_encoder); // get_rad();
-   outgoing_wheel_positions.data.data[1] = getEncoderValue(fl_encoder); // get_rad();
-   outgoing_wheel_positions.data.data[2] = getEncoderValue(bl_encoder); // get_rad();
-   outgoing_wheel_positions.data.data[3] = getEncoderValue(br_encoder); // get_rad();
+   outgoing_wheel_positions.data.data[0] = getEncoderValue(fl_encoder); // get_rad();
+   outgoing_wheel_positions.data.data[1] = getEncoderValue(br_encoder); // get_rad();
+   outgoing_wheel_positions.data.data[2] = getEncoderValue(fr_encoder); // get_rad();
+   outgoing_wheel_positions.data.data[3] = getEncoderValue(bl_encoder); // get_rad();
 
     rcl_publish(&motor_joint_state_publisher,
         &outgoing_wheel_positions,
@@ -99,7 +99,7 @@ void startEncoders(rcl_node_t *node_handle, rclc_support_t *support,
         &publisher_timer));
 
     fl_encoder = setupEncoder(34, 35, 1);
-    fr_encoder = setupEncoder(39, 36, 2);
-    bl_encoder = setupEncoder(23 ,22, 3);
-    br_encoder = setupEncoder(15, 2, 4);
+    br_encoder = setupEncoder(39, 36, 2);
+    fr_encoder = setupEncoder(23 ,22, 3);
+    bl_encoder = setupEncoder(15, 2, 4);
 }
